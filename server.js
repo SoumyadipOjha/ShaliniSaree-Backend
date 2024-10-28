@@ -32,7 +32,9 @@ const PORT = process.env.PORT || 5000;
 app.use(
   cors(
     {
-    origin: "https://shalinisaree.netlify.app"
+    origin: "https://shalinisaree.netlify.app",
+    methods: ["GET", "PUT", "DELETE", "POST"],
+    credentials: true,
   //   methods: ["GET", "POST", "DELETE", "PUT"],
   //   allowedHeaders: [
   //     "Content-Type",
