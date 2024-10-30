@@ -19,7 +19,7 @@ const commonFeatureRouter = require("./routes/common/feature-routes");
 //create a separate file for this and then import/use that file here
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/sareeeee")
+  .connect("mongodb+srv://shashusee234:199oENKi1pAIiDqQ@cluster0.zkbh6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.log(error));
 
@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "mongodb+srv://shashusee234:199oENKi1pAIiDqQ@cluster0.zkbh6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    origin: "https://shalinisaree.netlify.app/auth/login",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
