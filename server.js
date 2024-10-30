@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "mongodb+srv://shashusee234:199oENKi1pAIiDqQ@cluster0.zkbh6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
