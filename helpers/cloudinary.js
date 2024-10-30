@@ -1,33 +1,22 @@
 const cloudinary = require("cloudinary").v2;
 const multer = require("multer");
 
-// Configure Cloudinary
 cloudinary.config({
-  cloud_name: "SareeCom",
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET,
+  cloud_name: "djvpkmdtx",
+  api_key: "334662963167733",
+  api_secret: "llpYokG6Gg7CFH40ux1oI_HCNIs",
 });
 
-// Configure Multer
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
+const storage = new multer.memoryStorage();
 
-// Utility function to upload image to Cloudinary
 async function imageUploadUtil(file) {
-  return new Promise((resolve, reject) => {
-    const uploadStream = cloudinary.uploader.upload_stream(
-      { resource_type: "auto" },
-      (error, result) => {
-        if (error) {
-          reject(new Error(`Upload failed: ${error.message}`));
-        } else {
-          resolve(result);
-        }
-      }
-    );
-    uploadStream.end(file.buffer); // Pipe the buffer directly to Cloudinary
+  const result = await cloudinary.uploader.upload(file, {
+    resource_type: "auto",
   });
+
+  return result;
 }
 
-// Exporting the upload middleware and utility function
+const upload = multer({ storage });
+
 module.exports = { upload, imageUploadUtil };

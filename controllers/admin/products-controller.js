@@ -8,17 +8,18 @@ const handleImageUpload = async (req, res) => {
     const result = await imageUploadUtil(url);
 
     res.json({
-      success: true,
+      success: true,  // Set success to true if image upload is successful
       result,
     });
   } catch (error) {
     console.log(error);
     res.json({
       success: false,
-      message: "Error occured",
+      message: "Error occurred during image upload",
     });
   }
 };
+
 
 //add a new product
 const addProduct = async (req, res) => {
