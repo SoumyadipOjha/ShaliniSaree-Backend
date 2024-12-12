@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 5000;
 // Updated CORS Configuration
 app.use(
   cors({
-    origin: ["https://shalinisaree.netlify.app",  "http://localhost:5173"],// Specify the exact origin
+    origin: ["https://shaliniisaree.netlify.app",  "http://localhost:5173"],// Specify the exact origin
     credentials: true, // Allow cookies and auth headers
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
